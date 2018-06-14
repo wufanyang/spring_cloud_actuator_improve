@@ -44,7 +44,7 @@ public class RequestTraceFilter extends WebRequestTraceFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
-        String jsonBody =  org.apache.commons.io.IOUtils.toString(request.getInputStream());
+//        String jsonBody =  org.apache.commons.io.IOUtils.toString(request.getInputStream());
         ContentCachingRequestWrapper requestWrapper = new ContentCachingRequestWrapper(request);
         ContentCachingResponseWrapper responseWrapper = new ContentCachingResponseWrapper(response);
 
