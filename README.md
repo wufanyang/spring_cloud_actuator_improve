@@ -6,6 +6,7 @@ The code is very ugly.
 I have tried several ways to write this code, but only this ungly one succeed.
 
 1. Read request body manually before invoking super.doFilterInternal.
+
 code:       String jsonBody =  org.apache.commons.io.IOUtils.toString(request.getInputStream());
             super.doFilterInternal(request, response, filterChain);
       
@@ -14,6 +15,7 @@ result: After reading request body manually, the request body will be marked "re
       
 
 2. Invoke filterChain.doFilter and super.doFilterInternal.
+
 Code:       filterChain.doFilter(requestWrapper, responseWrapper);
             request.setAttribute(REQUEST_BODY, getRequestBody(requestWrapper));
             request.setAttribute(RESPONSE_BODY, getResponseBody(responseWrapper));
